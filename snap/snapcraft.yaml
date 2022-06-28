@@ -1,0 +1,16 @@
+name: hook-example
+base: core20
+version: '0.1'
+summary: A nice hook example
+description: |
+        a nice hook example
+
+grade: stable
+confinement: strict
+
+parts:
+  install-hook:
+    plugin: nil
+    override-build: |
+      cd $SNAPCRAFT_PROJECT_DIR/install-hook && install -D install $SNAPCRAFT_PART_INSTALL/snap/hooks/install
+           
